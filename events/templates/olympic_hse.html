@@ -1,0 +1,91 @@
+{%  extends 'base.html' %}
+
+{% load static %}
+{% block menu %}
+                        <li class="nav__items "><a href="{% url 'index' %}">О нас</a></li>
+                    <li class="nav__items active_header"><a href="{% url 'events:events' %}">Мероприятия</a></li>
+                    <li class="nav__items"><a href="https://www.youtube.com/" target="_blank">Мы в youtube</a></li>
+                    <li class="nav__items"><a href="{% url 'contacts' %}">Контакты</a></li>
+                    <li class="nav__items"><a href="{% url 'contact_with_us' %}">Связаться с нами</a></li>
+{% endblock %}
+{% block content %}
+<style>
+table {
+    background: url("{% static 'images/magistrate (2).png' %}") no-repeat;
+}
+#banner{
+    background: url("{% static '/images/istockphoto-1387103473-612x612.jpg' %}");
+}
+</style>
+<main>
+    <div class="container content">
+        <div class="olympic_info">
+            <div class="olympic_card">
+                <div class="olympic_logo">
+                    <img src="{% static 'images/logo-vshe.png' %}" alt="">
+                </div>
+                <div>
+                    <h3>Олимпиада Высшая проба</h3>
+                    <p>
+                        17.06.2023 - 29.06.2023
+                    </p>
+                </div>
+            </div>
+            <div class="olympic_content">
+
+                <table style="width: 100%; text-align: center;">
+                    <colgroup>
+                        <col width="50%">
+                        <col width="50%">
+                    </colgroup>
+                    <tr>
+                        <th colspan="2">ОНЛАЙН ЭТАП</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 10:00 17.06.2023</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">ОЧНЫЙ ЭТАП</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Москва
+                        </td>
+                        <td>
+                            10:00 20.06.2023
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Санкт-Петербург
+                        </td>
+                        <td>
+                            10:00 20.06.2023
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Казань
+                        </td>
+                        <td>
+                            10:00 20.06.2023
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Уфа
+                        </td>
+                        <td>
+                            12:00 20.06.2023
+                        </td>
+                    </tr>
+                    <tr id="banner" style="height: 280px">
+                        <td colspan="2"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,51 @@
+{%  extends 'base.html' %}
+
+{% load static %}
+{% block menu %}
+                        <li class="nav__items "><a href="{% url 'index' %}">О нас</a></li>
+                    <li class="nav__items active_header"><a href="{% url 'events:events' %}">Мероприятия</a></li>
+                    <li class="nav__items"><a href="https://www.youtube.com/" target="_blank">Мы в youtube</a></li>
+                    <li class="nav__items"><a href="{% url 'contacts' %}">Контакты</a></li>
+                    <li class="nav__items"><a href="{% url 'contact_with_us' %}">Связаться с нами</a></li>
+{% endblock %}
+{% block content %}
+
+<main>
+    <div class="container content">
+        <div class="events_list">
+            <div class="table_item">
+                <div class="table_image">
+                    <img src="{% static "images/logo-vshe.png" %}" alt="">
+                </div>
+                <div class="table_content">
+                    <h3>Олимпиада Высшая проба</h3>
+                    <p>Регистрируйся и начинай решать!ы</p>
+                    <a href="{% url 'olympic_hse' %}"><p class="btm">Перейти</p></a>
+                </div>
+            </div>
+            <div class="table_item">
+                <div class="table_image">
+                    <img src="{% static "images/logo_mipt.png" %}" alt="">
+                </div>
+                <div class="table_content">
+                    <h3>Олимпиада МФТИ</h3>
+                    <p>Регистрируйся и начинай решать!ы</p>
+                    <a href=""><p class="btm">Перейти</p></a>
+                </div>
+            </div>
+            <div class="table_item">
+                <div class="table_image">
+                    <img src="{% static "images/msu_logo.jpg" %}" alt="">
+                </div>
+                <div class="table_content">
+                    <h3>Олимпиада МГУ</h3>
+                    <p>Регистрируйся и начинай решать!ы</p>
+                    <a href=""><p class="btm">Перейти</p></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+{% endblock %}

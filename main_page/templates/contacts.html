@@ -1,0 +1,21 @@
+{%  extends 'base.html' %}
+
+{% load static %}
+{% block menu %}
+    <li class="nav__items "><a href="{% url 'index' %}">О нас</a></li>
+    <li class="nav__items"><a href="{% url 'events:events' %}">Мероприятия</a></li>
+    <li class="nav__items"><a href="https://www.youtube.com/" target="_blank">Мы в youtube</a></li>
+    <li class="nav__items active_header"><a href="{% url 'contacts' %}">Контакты</a></li>
+    <li class="nav__items"><a href="{% url 'contact_with_us' %}">Связаться с нами</a></li>
+{% endblock %}
+{% block content %}
+    <div class="container content">
+    <h2> Контакты</h2>
+    <p>
+        Телефон: +9250673055
+    </p>
+    <p>
+        Email:
+    </p>
+    </div>
+{% endblock %}

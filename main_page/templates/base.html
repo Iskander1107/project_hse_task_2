@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="{% url 'index' %}"><img src="{% static 'images/abitu_logo_new.png' %} " alt=""></a>
+            </div>
+            <nav>
+                <ul id="main-menu">
+                    {% block menu %} {% endblock %}
+
+                </ul>
+            </nav>
+            <div class="user">
+                <div class="user_avatar">
+                    <img src="{% static 'images/man.jpg' %}" alt="">
+                </div>
+                <div class="user_info">
+                    <p class="name">Мирдодоева Диера
+                    </p>
+                    <a href="#">Выход</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% block content %} {% endblock %}
+
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+/* main settings */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", Arial, sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+/* Container*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Header */
+.header{
+    justify-content: space-between;
+    display: flex;
+    border-bottom: black 1px solid;
+    height: 80px;
+}
+#main-menu{
+    display: inline-block;
+    padding-top: 40px;
+    width: 100%;
+    height: auto;
+}
+
+.logo{
+    width: 210px;
+}
+.logo img{
+    width: 100%;
+}
+.nav__items{
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    height: 30px;
+}
+.nav__items a{
+    text-decoration: none;
+    display: block;
+    height: 30px;
+}
+.nav__items a:hover{
+    border-bottom: aqua 2px solid;
+}
+.user{
+    display: flex;
+    margin-top: 20px;
+}
+.user_avatar {
+    width: 50px;
+}
+.user_avatar img{
+    width: 100%;
+}
+.user_info{
+    margin-left: 10px;
+    font-size: 15px;
+    text-align: left;
+}
+.active_header{
+    background: bisque;
+    height: 30px;
+}
+/* Main */
+
+main{
+    padding-top: 20px;
+}
+.container h2{
+    text-align: center;
+}
+
+.container h3{
+    padding-top: 10px;
+    padding-left: 20px;
+    margin: 16px;
+    font-size:20px;
+}
+
+.content p{
+    padding-top: 10px;
+    padding-left: 20px;
+    margin: 16px;
+    font-size:20px;
+}
+.content ul{
+    padding-top: 10px;
+    padding-left: 40px;
+    margin: 16px;
+    font-size:20px;
+}
+.content ol{
+
+    padding-top: 10px;
+    padding-left: 40px;
+    margin: 16px;
+    font-size:20px;
+}
+
+.table_item {
+    justify-content: space-between;
+    display: flex;
+    border: 2px solid grey;
+    margin-top: 5px;
+}
+.table_item:hover {
+    border: none;
+}
+.table_item .table_image {
+    width: 20%;
+}
+.table_item .table_content {
+    width: 80%;
+    text-align: left;
+}
+.table_item .table_content a{
+    text-decoration: none;
+    color: black;
+}
+
+.table_item .table_image img{
+    width: 100%;
+}
+p.btm {
+    width: 200px;
+    background-color: coral;
+    padding: 0;
+    margin-left: 36px;
+    margin-top: 26px;
+    text-align: center;
+    border-radius: 5px;
+    height: 50px;
+    padding-top: 15px;
+}
+
+p.btm:hover{
+    background-color: aqua;
+    cursor: pointer;
+}
+.olympic_info{
+    justify-content: space-between;
+    display: flex;
+}
+.olympic_card{
+    width: 30%;
+}
+.olympic_card img{
+    width: 100%;
+}
+.olympic_content{
+    width: 70%;
+}

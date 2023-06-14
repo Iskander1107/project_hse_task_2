@@ -1,0 +1,47 @@
+{%  extends 'base.html' %}
+
+{% load static %}
+{% block menu %}
+    {% for menu_item in menu %}
+        <li class="nav__items "><a href="{% url '{{ me }}' %}"><О нас></a></li>
+
+    {% endfor %}
+        <li class="nav__items "><a href="{% url 'events:events' %}">Мероприятия</a></li>
+        <li class="nav__items"><a href="https://www.youtube.com/" target="_blank">Мы в youtube</a></li>
+        <li class="nav__items"><a href="{% url 'contacts' %}">Контакты</a></li>
+        <li class="nav__items active_header"><a href="{% url 'contact_with_us' %}">Связаться с нами</a></li>
+{% endblock %}
+{% block content %}
+
+    <div class="content container">
+
+<form action="{% url "contact_with_us" %}" method="post">
+  <fieldset>
+    <legend>Контактная информация</legend>
+      {% csrf_token %}
+      <p>
+          <label for="{{ form.name.id_for_label }}">Имя</label>
+          {{ form.name }}
+      </p>
+      <p>
+          <label for="{{ form.phone_numbers.id_for_label }}">Телефон</label>
+          {{ form.phone_numbers }}
+      </p>
+      <p>
+          <label for="{{ form.email.id_for_label }}">Email</label>
+          {{ form.email }}
+      </p>
+      <p style="display: none">
+          <label for="{{ form.create_time.id_for_label }}">date</label>
+          {{ form.create_time }}
+      </p>
+      <p><input type="submit" value="Отправить информацию"></p>
+  </fieldset>
+</form>
+
+    </div>
+    <script>
+
+    document.getElementById('time').value = new Date();
+    </script>
+{% endblock %}
