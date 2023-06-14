@@ -2,11 +2,11 @@
 
 {% load static %}
 {% block menu %}
-                        <li class="nav__items active_header"><a href="{% url 'index' %}">О нас</a></li>
-                    <li class="nav__items "><a href="{% url 'events:events' %}">Мероприятия</a></li>
-                    <li class="nav__items"><a href="https://www.youtube.com/" target="_blank">Мы в youtube</a></li>
-                    <li class="nav__items"><a href="{% url 'contacts' %}">Контакты</a></li>
-                    <li class="nav__items "><a href="{% url 'contact_with_us' %}">Связаться с нами</a></li>
+    {% for menu_item in menu %}
+        {% if menu_item.active %}
+            <li class="nav__items "><a href="{{ menu_item.link }}">{{ menu_item.title}}</a></li>
+        {% endif %}
+    {% endfor %}
 {% endblock %}
 {% block content %}
 

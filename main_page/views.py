@@ -7,14 +7,14 @@ from main_page.models import MainMenu
 
 def index(request):
     content = {
-     'menu': MainMenu()
+     'menu': MainMenu.objects.all()
     }
     return render(request, "index.html", content)
 
 
 def contacts(request):
     content = {
-        'menu': sorted(MainMenu().objects.all(), key=lambda x: x.sort)
+        'menu': MainMenu.objects.all()
     }
     return render(request, 'contacts.html', content)
 
@@ -29,14 +29,14 @@ def contact_with_us(request):
         form = ContactWithUsForm()
     content = {
         'form': form,
-        'menu': sorted(MainMenu().objects.all(), key=lambda x: x.sort)
+        'menu': MainMenu.objects.all()
     }
     return render(request, 'contact_with_us.html', content)
 
 
 def olympic_hse(request):
     content = {
-        'menu': sorted(MainMenu().objects.all(), key=lambda x: x.sort)
+        'menu': MainMenu.objects.all()
     }
     return render(request, 'olympic_hse.html', content)
 
