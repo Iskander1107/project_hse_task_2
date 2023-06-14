@@ -22,9 +22,9 @@ from main_page.views import index, contacts, contact_with_us, olympic_hse, redir
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('events', include('events.urls', namespace='events')),
-    path('contacts', contacts, name='contacts'),
-    path('contact_with_us', contact_with_us, name='contact_with_us'),
-    path('olympic_hse', olympic_hse, name='olympic_hse'),
-    path('redirect_page', redirect_page, name='redirect_page')
+    path('events/', include('events.urls', namespace='events')),
+    path('contacts/', contacts, name='contacts'),
+    path('contact_with_us/', contact_with_us, name='contact_with_us'),
+    path('olympic_hse/', olympic_hse, name='olympic_hse'),
+    path('redirect_page/', redirect_page, name='redirect_page')
 ]
