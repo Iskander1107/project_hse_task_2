@@ -35,12 +35,5 @@ def contact_with_us(request):
     return render(request, 'contact_with_us.html', content)
 
 
-def olympic_hse(request):
-    content = {
-        'menu': MainMenu.objects.all()
-    }
-    return render(request, 'olympic_hse.html', content)
-
-
 def redirect_page(request):
     return redirect('/')
