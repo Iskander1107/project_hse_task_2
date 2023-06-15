@@ -24,7 +24,7 @@ def contact_with_us(request):
         form = ContactWithUsForm(data=request.POST)
         if form.is_valid():
             form.save()
-        return HttpResponseRedirect(reverse('index'))
+        return HttpResponseRedirect(reverse('contact_with_us'))
     else:
         form = ContactWithUsForm()
     content = {
