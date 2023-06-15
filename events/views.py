@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from main_page.models import MainMenu
 from events.models import Events
+
 # Create your views here.
 
 
