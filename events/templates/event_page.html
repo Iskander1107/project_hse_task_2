@@ -9,24 +9,26 @@
     {% endfor %}
 {% endblock %}
 {% block content %}
-
+<style>
+    {{ event.style|safe }}
+</style>
 <main>
     <div class="container content">
-        <div class="events_list">
-            {% for event in events %}
-                <div class="table_item">
-                <div class="table_image">
+        <div class="olympic_info">
+            <div class="olympic_card">
+                <div class="olympic_logo">
                     <img src="{{ event.image.url }}" alt="">
-                </div>
-                <div class="table_content">
+                </div>git
+                <div>
                     <h3>{{ event.title }}</h3>
-                    <p>{{ event.description_mini|safe }}</p>
-                    <a href="{% url 'events:event_page' event.id %}"><p class="btm">Перейти</p></a>
+                    <p>
+                        {{ event.start }} - {{ event.end }}
+                    </p>
                 </div>
             </div>
-            {% endfor %}
-
-
+            <div class="olympic_content">
+                {{ event.description_full|safe }}
+            </div>
         </div>
 
     </div>

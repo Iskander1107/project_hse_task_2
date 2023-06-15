@@ -18,13 +18,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from main_page.views import index, contacts, contact_with_us, olympic_hse, redirect_page
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('events', include('events.urls', namespace='events')),
-    path('contacts', contacts, name='contacts'),
-    path('contact_with_us', contact_with_us, name='contact_with_us'),
-    path('olympic_hse', olympic_hse, name='olympic_hse'),
-    path('redirect_page', redirect_page, name='redirect_page')
+    path('events/', include('events.urls', namespace='events')),
+    path('contacts/', contacts, name='contacts'),
+    path('contact_with_us/', contact_with_us, name='contact_with_us'),
+    path('olympic_hse/', olympic_hse, name='olympic_hse'),
+    path('redirect_page/', redirect_page, name='redirect_page')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

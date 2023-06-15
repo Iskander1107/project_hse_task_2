@@ -2,19 +2,19 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.http import HttpResponse
 from django.urls import reverse
 from main_page.form import ContactWithUsForm
-from main_page.models import MainMenu
+from main_page.models import MainMenu, ContactWithUs
 
 
 def index(request):
     content = {
-     'menu': MainMenu()
+     'menu': MainMenu.objects.all()
     }
     return render(request, "index.html", content)
 
 
 def contacts(request):
     content = {
-        'menu': sorted(MainMenu().objects.all(), key=lambda x: x.sort)
+        'menu': MainMenu.objects.all()
     }
     return render(request, 'contacts.html', content)
 
@@ -29,14 +29,15 @@ def contact_with_us(request):
         form = ContactWithUsForm()
     content = {
         'form': form,
-        'menu': sorted(MainMenu().objects.all(), key=lambda x: x.sort)
+        'menu': MainMenu.objects.all(),
+        'data_from_form': ContactWithUs.objects.all(),
     }
     return render(request, 'contact_with_us.html', content)
 
 
 def olympic_hse(request):
     content = {
-        'menu': sorted(MainMenu().objects.all(), key=lambda x: x.sort)
+        'menu': MainMenu.objects.all()
     }
     return render(request, 'olympic_hse.html', content)
 
